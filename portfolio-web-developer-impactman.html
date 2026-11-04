@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ainaya Azalia Putri Erangga | Portofolio Web Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F2F5F9; --surface:#FFFFFF; --ink:#16202E; --muted:#556175; --line:#D5DCE6;
+  --blue:#2B4EFF; --blue-ink:#FFFFFF; --mark:#FFD84D; --mark-ink:#16202E; --ph:#B4540A;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#0F1623; --surface:#172033; --ink:#EAF0FA; --muted:#9AA8BD; --line:#2A3650;
+    --blue:#7E95FF; --blue-ink:#0F1623; --ph:#F0A25C;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#0F1623; --surface:#172033; --ink:#EAF0FA; --muted:#9AA8BD; --line:#2A3650;
+  --blue:#7E95FF; --blue-ink:#0F1623; --ph:#F0A25C;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:1.0625rem;line-height:1.65}
+h1,h2,h3{font-family:"Bricolage Grotesque","Instrument Sans",system-ui,sans-serif;line-height:1.1;margin:0}
+a{color:var(--blue)}
+a:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:4px}
+.wrap{max-width:62rem;margin:0 auto;padding:0 1.25rem}
+.ph{color:var(--ph);font-weight:600}
+.note{background:var(--mark);color:var(--mark-ink);font-size:.9rem;padding:.6rem 1.25rem;text-align:center}
+nav{display:flex;flex-wrap:wrap;gap:.25rem 1.25rem;padding:1rem 0;font-weight:500;font-size:.95rem}
+nav a{color:var(--ink);text-decoration:none}
+nav a:hover{text-decoration:underline}
+header.hero{padding:3rem 0 3.5rem}
+.hero h1{font-size:clamp(2.5rem,8.5vw,5.5rem);font-weight:800;letter-spacing:-.03em;max-width:15ch}
+.hero h1 .hl{background:linear-gradient(transparent 58%,var(--mark) 58% 92%,transparent 92%);padding:0 .08em;color:inherit}
+.hero p.lead{font-size:1.2rem;max-width:41rem;margin:1.5rem 0 2rem;color:var(--muted)}
+.btns{display:flex;flex-wrap:wrap;gap:.75rem}
+.btn{display:inline-block;padding:.75rem 1.25rem;border-radius:.5rem;font-weight:600;text-decoration:none;border:2px solid var(--blue)}
+.btn.primary{background:var(--blue);color:var(--blue-ink)}
+.btn.ghost{color:var(--blue)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(10rem,1fr));gap:1rem;margin-top:2.5rem}
+.stats div{border-left:4px solid var(--blue);padding:.25rem 0 .25rem .9rem}
+.stats strong{display:block;font-family:"Bricolage Grotesque",sans-serif;font-size:1.9rem;line-height:1.1}
+.stats span{color:var(--muted);font-size:.92rem}
+section{padding:3.5rem 0;border-top:1px solid var(--line)}
+section h2{font-size:clamp(1.8rem,5vw,2.6rem);margin-bottom:1.5rem;letter-spacing:-.02em}
+.grid2{display:grid;grid-template-columns:1fr 2fr;gap:1rem 3rem}
+@media (max-width:48rem){.grid2{grid-template-columns:1fr}}
+.about p{margin:0 0 1rem;max-width:42rem}
+.skills{display:grid;gap:1.5rem;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr))}
+.skills h3{font-size:1.1rem;margin-bottom:.25rem}
+.skills small{display:block;color:var(--muted);margin-bottom:.75rem}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem;padding:0;margin:0;list-style:none}
+.tags li{padding:.2rem .7rem;border-radius:.4rem;font-size:.92rem;background:var(--blue);color:var(--blue-ink)}
+.tags.outline li{background:transparent;color:var(--ink);border:1.5px dashed var(--muted)}
+.proj{display:grid;grid-template-columns:1fr 2fr;gap:.75rem 3rem;padding:2.25rem 0;border-top:1px solid var(--line)}
+.proj:first-of-type{border-top:0;padding-top:0}
+@media (max-width:48rem){.proj{grid-template-columns:1fr}}
+.proj h3{font-size:1.7rem;letter-spacing:-.01em}
+.proj .meta{color:var(--muted);font-size:.95rem;margin:.5rem 0 1rem}
+.proj .tags{margin-bottom:1rem}
+.proj dl{margin:0}
+.proj dt{font-weight:600;margin-top:1rem}
+.proj dt:first-child{margin-top:0}
+.proj dd{margin:.15rem 0 0;max-width:40rem}
+.proj ul.feat{margin:.25rem 0 0;padding-left:1.2rem;max-width:40rem}
+.proj ul.feat li{margin-bottom:.3rem}
+.proj .btns{margin-top:1.25rem}
+.steps{list-style:none;margin:0;padding:0 0 0 1.25rem;border-left:3px solid var(--blue);counter-reset:s}
+.steps li{margin-bottom:1.5rem;position:relative;counter-increment:s;max-width:42rem}
+.steps li::before{content:counter(s);position:absolute;left:-2.25rem;top:0;width:1.9rem;height:1.9rem;border-radius:50%;background:var(--blue);color:var(--blue-ink);font-weight:700;font-size:.9rem;display:grid;place-items:center}
+.steps strong{display:block;font-size:1.05rem}
+.steps span{color:var(--muted)}
+.fit{background:var(--surface);border:1px solid var(--line);border-radius:1rem;padding:2rem}
+.fit ul{margin:0;padding-left:1.2rem;max-width:44rem}
+.fit li{margin-bottom:.7rem}
+.contact p{max-width:36rem;margin:0 0 1.25rem}
+footer{padding:2rem 0 3rem;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+</style>
+</head>
+<body>
+
+<div class="note">Tinggal isi bagian oranye: jurusan, kampus, email, WhatsApp, dan LinkedIn.</div>
+
+<div class="wrap">
+<nav aria-label="Navigasi utama">
+  <a href="#tentang">Tentang</a>
+  <a href="#keahlian">Keahlian</a>
+  <a href="#proyek">Proyek</a>
+  <a href="#alur">Cara Kerja</a>
+  <a href="#kontribusi">Untuk Impactman 9.0</a>
+  <a href="#kontak">Kontak</a>
+</nav>
+
+<header class="hero">
+  <h1>Ainaya Azalia Putri Erangga, calon <span class="hl">Web Developer</span> Impactman 9.0</h1>
+  <p class="lead">Mahasiswa <span class="ph">[Jurusan]</span> semester 3 di <span class="ph">[Nama Kampus]</span>. Saya membangun situs web dengan HTML, CSS, dan JavaScript, lalu menerbitkannya dengan Vercel dan mengelola versinya dengan Git. Saya melamar sebagai staf Web Developer untuk ikut menyiapkan situs web Impactman 9.0.</p>
+  <div class="btns">
+    <a class="btn primary" href="#proyek">Lihat proyek saya</a>
+    <a class="btn ghost" href="#kontak">Hubungi saya</a>
+  </div>
+  <div class="stats">
+    <div><strong>2</strong><span>proyek sudah tayang dan bisa dibuka</span></div>
+    <div><strong>3</strong><span>bahasa pemrograman web yang saya pakai</span></div>
+    <div><strong>Semester 3</strong><span>siap belajar cepat bersama tim</span></div>
+  </div>
+</header>
+
+<section id="tentang" class="about">
+  <div class="grid2">
+    <h2>Tentang saya</h2>
+    <div>
+      <p>Saya suka mengubah ide menjadi halaman web yang benar-benar bisa dipakai. Dua proyek yang saya tampilkan di sini bukan sekadar latihan di komputer sendiri: keduanya sudah diterbitkan dan dapat dibuka oleh siapa saja lewat tautan.</p>
+      <p>Proyek pertama adalah aplikasi daftar tugas yang berfokus pada logika JavaScript. Proyek kedua adalah situs reservasi lapangan padel yang lebih besar, lengkap dengan sisi server untuk memeriksa ketersediaan lapangan dan menyimpan pemesanan.</p>
+      <p>Saya masih berada di semester 3 dan tahu masih banyak yang perlu dipelajari. Karena itu, saya terbiasa mencoba, membaca dokumentasi, dan bertanya ketika menemui jalan buntu, lalu menyelesaikan pekerjaan sesuai tenggat.</p>
+    </div>
+  </div>
+</section>
+
+<section id="keahlian">
+  <h2>Keahlian</h2>
+  <div class="skills">
+    <div>
+      <h3>Bahasa</h3>
+      <small>Sudah saya pakai di proyek yang tayang.</small>
+      <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Node.js (sisi server)</li></ul>
+    </div>
+    <div>
+      <h3>Alat kerja</h3>
+      <small>Untuk menulis, menyimpan, dan menerbitkan kode.</small>
+      <ul class="tags"><li>Git</li><li>GitHub</li><li>Vercel</li><li>GitHub Pages</li></ul>
+    </div>
+    <div>
+      <h3>Sedang diperdalam</h3>
+      <small>Dasarnya sudah ada, sedang saya asah.</small>
+      <ul class="tags outline"><li>Desain responsif</li><li>Merancang API</li><li class="ph">[Tambahkan jika ada]</li></ul>
+    </div>
+  </div>
+</section>
+
+<section id="proyek">
+  <h2>Proyek</h2>
+
+  <article class="proj">
+    <div>
+      <h3>Smash Point Padel Club</h3>
+      <div class="meta">Situs reservasi lapangan padel. Proyek pribadi.</div>
+      <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Node.js</li><li>Vercel</li><li>Git</li></ul>
+    </div>
+    <div>
+      <dl>
+        <dt>Deskripsi</dt>
+        <dd>Situs untuk klub padel fiktif yang memungkinkan pengunjung memilih lapangan, tanggal, dan jam main, lalu langsung melihat ringkasan pesanan beserta total biayanya. Situs ini juga memuat informasi fasilitas, daftar harga, dan profil pelatih.</dd>
+        <dt>Fitur utama</dt>
+        <dd>
+          <ul class="feat">
+            <li>Pemilihan lapangan dalam ruangan atau luar ruangan, dengan ketersediaan untuk 14 hari ke depan.</li>
+            <li>Slot bermain 90 menit dan pilihan pelatih, dengan total harga yang diperbarui otomatis.</li>
+            <li>Tiga paket harga: pemesanan tunggal, paket bulanan, dan paket korporat.</li>
+            <li>Tampilan menyesuaikan layar ponsel hingga komputer.</li>
+          </ul>
+        </dd>
+        <dt>Peran saya</dt>
+        <dd>Mengerjakan seluruh proyek sendiri: merancang tampilan, menulis antarmuka dengan HTML, CSS, dan JavaScript, serta membuat berkas sisi server untuk memeriksa ketersediaan lapangan dan mencatat pemesanan. Kode disimpan di GitHub dengan Git dan diterbitkan lewat Vercel.</dd>
+        <dt>Yang saya pelajari</dt>
+        <dd>Memisahkan tampilan dari logika server, menangani data tanggal dan jam, serta alur menerbitkan situs dari repositori GitHub ke Vercel.</dd>
+      </dl>
+      <div class="btns">
+        <a class="btn primary" href="https://website-padel-lac.vercel.app/" target="_blank" rel="noopener">Buka situs</a>
+        <a class="btn ghost" href="https://github.com/ainayaerangga-cmd" target="_blank" rel="noopener">Lihat di GitHub</a>
+      </div>
+    </div>
+  </article>
+
+  <article class="proj">
+    <div>
+      <h3>Whimsical To Do List</h3>
+      <div class="meta">Aplikasi daftar tugas. Proyek pribadi.</div>
+      <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Git</li><li>GitHub Pages</li></ul>
+    </div>
+    <div>
+      <dl>
+        <dt>Deskripsi</dt>
+        <dd>Aplikasi daftar tugas sederhana dengan tampilan yang ceria. Pengguna dapat menambahkan tugas, menyaring tugas yang jatuh pada hari ini, mengatur ulang daftar, atau menghapus semua tugas sekaligus.</dd>
+        <dt>Fitur utama</dt>
+        <dd>
+          <ul class="feat">
+            <li>Menambah tugas baru dengan satu formulir singkat.</li>
+            <li>Filter “Today Only” untuk memfokuskan pekerjaan hari ini.</li>
+            <li>Tombol atur ulang dan hapus semua tugas.</li>
+          </ul>
+        </dd>
+        <dt>Peran saya</dt>
+        <dd>Membangun aplikasi sendiri dari awal hingga tayang: menyusun struktur dengan HTML, mengatur gaya dengan CSS, dan menulis logika interaksi dengan JavaScript. Kodenya dikelola dengan Git dan diterbitkan melalui GitHub Pages.</dd>
+        <dt>Yang saya pelajari</dt>
+        <dd>Memanipulasi elemen halaman dengan JavaScript, menangani peristiwa klik dan input, serta menyusun tampilan yang tetap nyaman dipakai.</dd>
+      </dl>
+      <div class="btns">
+        <a class="btn primary" href="https://ainayaerangga.github.io/WhimsicalToDoList-AinayaAzaliaPutriErangga/" target="_blank" rel="noopener">Buka aplikasi</a>
+        <a class="btn ghost" href="https://github.com/ainayaerangga" target="_blank" rel="noopener">Lihat di GitHub</a>
+      </div>
+    </div>
+  </article>
+</section>
+
+<section id="alur">
+  <h2>Cara saya bekerja</h2>
+  <ol class="steps">
+    <li><strong>Merancang</strong><span>Menentukan tujuan halaman dan fitur yang benar-benar dibutuhkan sebelum menulis kode.</span></li>
+    <li><strong>Membangun</strong><span>Menulis HTML untuk struktur, CSS untuk tampilan, dan JavaScript untuk interaksi.</span></li>
+    <li><strong>Menyimpan versi dengan Git</strong><span>Setiap perubahan dicatat sehingga mudah ditelusuri dan dikembalikan bila ada kesalahan.</span></li>
+    <li><strong>Menerbitkan dengan Vercel</strong><span>Hasil kerja langsung tayang dan dapat diuji bersama tim lewat satu tautan.</span></li>
+  </ol>
+</section>
+
+<section id="kontribusi">
+  <h2>Yang dapat saya bantu di Impactman 9.0</h2>
+  <div class="fit">
+    <ul>
+      <li>Membuat dan merapikan halaman situs acara, seperti beranda, jadwal, profil pembicara, dan informasi pendaftaran.</li>
+      <li>Memastikan situs nyaman dibuka dari ponsel, karena sebagian besar peserta akan mengaksesnya dari sana.</li>
+      <li>Menerbitkan dan memperbarui situs dengan cepat lewat Vercel ketika ada perubahan dari divisi lain.</li>
+      <li>Bekerja sama dengan tim desain dan publikasi serta menerima revisi dengan terbuka.</li>
+      <li class="ph">[Tulis satu kalimat jujur tentang alasanmu tertarik pada Impactman 9.0.]</li>
+    </ul>
+  </div>
+</section>
+
+<section id="kontak" class="contact">
+  <h2>Kontak</h2>
+  <p>Terima kasih telah melihat portofolio saya. Saya bersedia berdiskusi dan mengikuti tes teknis kapan pun diperlukan.</p>
+  <div class="btns">
+    <a class="btn primary" href="mailto:email@contoh.com">email@contoh.com</a>
+    <a class="btn ghost" href="https://github.com/ainayaerangga-cmd" target="_blank" rel="noopener">GitHub</a>
+    <a class="btn ghost" href="https://linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="btn ghost" href="https://wa.me/62" target="_blank" rel="noopener">WhatsApp</a>
+  </div>
+</section>
+
+<footer>Ainaya Azalia Putri Erangga. Lamaran Staf Web Developer Impactman 9.0.</footer>
+</div>
+</body>
+</html>
